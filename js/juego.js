@@ -67,7 +67,7 @@ En vez de intercambiar esos valores vamos a terminar teniendo en ambas posicione
 Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
-  var posicionAuxiliar = xxxxxxx
+  var posicionAuxiliar = xx
     //COMPLETAR
 }
 
@@ -122,6 +122,42 @@ function moverEnDireccion(direccion) {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //////////////////////////////////////////////////////////
