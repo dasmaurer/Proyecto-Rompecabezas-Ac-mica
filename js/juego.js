@@ -24,14 +24,20 @@ function mostrarInstrucciones(instrucciones) {
   for (var i = 0; i<instrucciones.length; i++){
       mostrarInstruccionEnLista(instrucciones[i], "lista-instrucciones");
     }
-    //COMPLETAR
+    //COMPLETAR--------------------------------------------------------------------------------------------------
 }
 
 /* COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
 y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
-function agrugarUltimaDireccion(direccion){
+//function agregarUltimaDireccion(direccion){
+//  movimientos.push(direccion);
+//  actualizarUltimoMovimiento(movimientos[0]);
+//}
+
+function compilarDirecciones(direccion){
   movimientos.push(direccion);
-  actualizarUltimoMovimiento(movimientos[0]);
+  actualizarUltimoMovimiento(movimientos);
+
 }
 
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora. 
