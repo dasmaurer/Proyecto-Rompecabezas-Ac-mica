@@ -1,6 +1,12 @@
-// Arreglo que contiene las intrucciones del juego 
-var instrucciones = ["Objetivo: llegar al modelo de imágen que se muestra a continuación;","Mezclá las piezas;","Mové con el teclado la posicion de las piezas hasta llegar al modelo." ];
-// Arreglo para ir guardando los movimientos que se vayan realizando
+/*PARTE 2 Paso 1: Escribir instrucciones //////////////////////////////////////////////////////////////
+Arreglo que contiene las intrucciones del juego */
+
+var instrucciones = ["Objetivo: llegar al modelo de imágen que se muestra a continuación;",
+"Mezclá las piezas;",
+"Mové con el teclado la posicion de las piezas hasta llegar al modelo." ];
+
+//Arreglo para ir guardando los movimientos que se vayan realizando*/
+
 var movimientos = [];
 
 // Representación de la grilla. Cada número representa a una pieza.
@@ -16,18 +22,20 @@ Esta posición comienza siendo la [2, 2]*/
 var filaVacia = 2;
 var columnaVacia = 2;
 
-/* Esta función deberá recorrer el arreglo de instrucciones pasado por parámetro. 
+/* PARTE 2 Paso 2: Mostrar instrucciones //////////////////////////////////////////////////////////////
+Esta función deberá recorrer el arreglo de instrucciones pasado por parámetro. 
 Cada elemento de este arreglo deberá ser mostrado en la lista con id 'lista-instrucciones'. 
 Para eso deberás usar la función ya implementada mostrarInstruccionEnLista().
 Podés ver su implementación en la ultima parte de este codigo. */
+
 function mostrarInstrucciones(instrucciones) {
   for (var i = 0; i<instrucciones.length; i++){
       mostrarInstruccionEnLista(instrucciones[i], "lista-instrucciones");
     }
-    //COMPLETAR--------------------------------------------------------------------------------------------------
 }
 
-/* COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
+/* PARTE 2 Paso 3: Mostrar último movimiento   //////////////////////////////////////////////////////////
+COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
 y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
 //function agregarUltimaDireccion(direccion){
 //  movimientos.push(direccion);
@@ -40,21 +48,28 @@ function compilarDirecciones(direccion){
 
 }
 
-/* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora. 
+/* PARTE 3 Paso 1: Definir el Tablero Ganador  //////////////////////////////////////////////////////////
+Esta función va a chequear si el Rompecabezas esta en la posicion ganadora. 
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
-function chequearSiGano(){
-  for (var i= 0; grilla.length<2; i++){
-    for (var j=0; grilla[x].length<2; j++){
-        if( resultado != grilla[i][j]){
-          var resultado = false;
-        } else if (resultado = grilla[i][j]) {
-          mostrarCartelGanador();
-        }
-    }
-  }
 
-    //COMPLETAR
+var grillaGandora = [[2,2,3] , [4,5,6] , [7,8,9]];
+
+function chequearSiGano(){
+
+  var gano = true;
+
+  for (var i= 0; grilla.length<2; i++){
+    for (var j=0; grilla[i].length<2; j++){
+      if (grilla[i][j] != grillaGanadora[i][j]){
+        gano = false;
+      } else { //if (grilla[i][j] == grillaGandora[i][j])
+      return gano;
+      } 
+      mostrarCartelGanador();  // <--------- no estoy del todo seguro si tiene que estar acá
+    } 
+  }
 }
+    //COMPLETAR
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
@@ -62,7 +77,8 @@ function mostrarCartelGanador() {
     //COMPLETAR
 }
 
-/* Función que intercambia dos posiciones en la grilla.
+/* PARTE 3 Paso 3: Intercambiar las piezas  /////////////////////////////////////////////////////////////
+ Función que intercambia dos posiciones en la grilla.
 Pensar como intercambiar dos posiciones en un arreglo de arreglos. 
 Para que tengas en cuenta:
 Si queremos intercambiar las posiciones [1,2] con la [0, 0], si hacemos: 
