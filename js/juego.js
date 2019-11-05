@@ -1,9 +1,11 @@
 /*PARTE 2 Paso 1: Escribir instrucciones //////////////////////////////////////////////////////////////
 Arreglo que contiene las intrucciones del juego */
 
-var instrucciones = ["Objetivo: llegar al modelo de imágen que se muestra a continuación;",
-"Mezclá las piezas;",
-"Mové con el teclado la posicion de las piezas hasta llegar al modelo." ];
+var instrucciones = [
+    "Objetivo: llegar al modelo de imágen que se muestra a continuación;",
+    "Mezclá las piezas;",
+    "Mové con el teclado la posicion de las piezas hasta llegar al modelo." 
+];
 
 //Arreglo para ir guardando los movimientos que se vayan realizando*/
 
@@ -58,12 +60,8 @@ function compilarDirecciones(direccion){
 Esta función va a chequear si el Rompecabezas esta en la posicion ganadora. 
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
 
-
-
 function chequearSiGano(){
-
   var gano = true;
-
   for (var i= 0; grilla.length; i++){
     for (var j=0; grilla[i].length; j++){
       if (grilla[i][j] != grillaGanadora[i][j]){
@@ -75,16 +73,16 @@ function chequearSiGano(){
     } 
   }
 }
-    //COMPLETAR
-
+//COMPLETAR
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
+
 function mostrarCartelGanador() {
   alert("Ganaste!");
     //COMPLETAR
 }
 
 /* PARTE 3 Paso 3: Intercambiar las piezas  /////////////////////////////////////////////////////////////
- Función que intercambia dos posiciones en la grilla.
+Función que intercambia dos posiciones en la grilla.
 Pensar como intercambiar dos posiciones en un arreglo de arreglos. 
 Para que tengas en cuenta:
 Si queremos intercambiar las posiciones [1,2] con la [0, 0], si hacemos: 
@@ -95,12 +93,16 @@ En vez de intercambiar esos valores vamos a terminar teniendo en ambas posicione
 Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
-  var posicionAuxiliar = xx
+  var posicionAuxiliar = [filaPos1, columnaPos1];
+  grilla[filaPos1][ColumnaPos1] = [filaPos2][columnaPos2];
+  grilla[filaPos2][columnaPos2] = posicionAuxiliar;
     //COMPLETAR
 }
 
 // Actualiza la posición de la pieza vacía
 function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
+  filaVacia = nuevaFila;
+  columnaVacia = nuevaColumna;
     //COMPLETAR
 }
 
