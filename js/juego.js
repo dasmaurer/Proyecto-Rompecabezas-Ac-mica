@@ -17,6 +17,12 @@ var grilla = [
     [7, 8, 9]
 ];
 
+var grillaGanadora = [
+    [1, 2, 3],
+    [4, 5, 6], 
+    [7, 8, 9]
+];
+
 /* Estas dos variables son para guardar la posición de la pieza vacía. 
 Esta posición comienza siendo la [2, 2]*/
 var filaVacia = 2;
@@ -52,14 +58,14 @@ function compilarDirecciones(direccion){
 Esta función va a chequear si el Rompecabezas esta en la posicion ganadora. 
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
 
-var grillaGandora = [[2,2,3] , [4,5,6] , [7,8,9]];
+
 
 function chequearSiGano(){
 
   var gano = true;
 
-  for (var i= 0; grilla.length<2; i++){
-    for (var j=0; grilla[i].length<2; j++){
+  for (var i= 0; grilla.length; i++){
+    for (var j=0; grilla[i].length; j++){
       if (grilla[i][j] != grillaGanadora[i][j]){
         gano = false;
       } else { //if (grilla[i][j] == grillaGandora[i][j])
