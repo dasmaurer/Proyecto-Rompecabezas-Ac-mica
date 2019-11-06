@@ -19,7 +19,7 @@ var grilla = [
     [7, 8, 9]
 ];
 
-var grillaGanadora = [
+const grillaGanadora = [
     [1, 2, 3],
     [4, 5, 6], 
     [7, 8, 9]
@@ -109,6 +109,8 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
 
 // Para chequear si la posicón está dentro de la grilla.
 function posicionValida(fila, columna) {
+
+
     //COMPLETAR
 }
 
