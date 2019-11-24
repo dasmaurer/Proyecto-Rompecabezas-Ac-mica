@@ -94,7 +94,7 @@ Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
   var posicionAuxiliar = [filaPos1, columnaPos1];
-  grilla[filaPos1][ColumnaPos1] = grilla[filaPos2][columnaPos2];
+  grilla[filaPos1][columnaPos1] = [filaPos2][columnaPos2];
   grilla[filaPos2][columnaPos2] = posicionAuxiliar;
     //COMPLETADO
 }
@@ -108,7 +108,7 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
 
 
 
-/* PARTE 3  Paso 4: Definir Movimientos Válidos ////////////////////////////////////////////////////////
+/* PARTE 3  Paso 4: Definir Movimientos Válidos ////////////////////////////////////////////////////////////////////////////////////////////
 En este paso, hay que terminar la función posicionValida(fila,columna). Esta deberá avisar si la pieza 
 puede moverse para donde queremos que se mueva (entra en el tablero de juego) o no puede (se sale del tablero).
 A nivel lógico, tendrá que definir si la fila y la columna están dentro de la grilla (devolviendo true) 
@@ -118,7 +118,7 @@ Pista: ¿Se podrá resolver todo en un condicional?
 Para chequear si la posicón está dentro de la grilla. */
 
 function posicionValida(fila, columna) {
-  if (fila>=0 && fila<=2 && columna>=0 && columna<=2){
+  if (fila>=0 && fila<3 && columna>=0 && columna<3){
     return true;
   } else {
     return false;
@@ -126,9 +126,10 @@ function posicionValida(fila, columna) {
 }
 //COMPLETADO
 
-
-/* Movimiento de fichas, en este caso la que se mueve es la blanca intercambiando su posición con otro elemento.
+/* PARTE 3  Paso 5: Movimiento de las Piezas con el Teclado ////////////////////////////////////////////////////////////////////////////////////
+Movimiento de fichas, en este caso la que se mueve es la blanca intercambiando su posición con otro elemento.
 Las direcciones están dadas por números que representa: arriba (38), abajo (40), izquierda (37), derecha (39) */
+
 function moverEnDireccion(direccion) {
   var nuevaFilaPiezaVacia;
   var nuevaColumnaPiezaVacia;
@@ -147,12 +148,16 @@ function moverEnDireccion(direccion) {
     
   // Mueve pieza hacia la derecha, reemplazandola con la blanca
   else if (direccion === codigosDireccion.DERECHA) {
+    nuevaFilaPiezaVacia = filaVacia;
+    nuevaColumnaPiezaVacia = columnaVacia + 1;
     //COMPLETAR
   }
     
   // Mueve pieza hacia la izquierda, reemplazandola con la blanca
   else if (direccion === codigosDireccion.IZQUIERDA) {
-    // COMPLETAR
+    nuevaFilaPiezaVacia = filaVacia;
+    nuevaColumnaPiezaVacia = columnaVacia - 1;
+    // COMPLETADO
   }
 
   /* A continuación se chequea si la nueva posición es válida, si lo es, se intercambia. 
@@ -164,7 +169,7 @@ function moverEnDireccion(direccion) {
         actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
 
   //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
-
+    compilarDirecciones(direccion);
     }
 }
 
