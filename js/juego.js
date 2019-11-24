@@ -94,8 +94,8 @@ Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
   var posicionAuxiliar = [filaPos1, columnaPos1];
-  grilla[filaPos1][columnaPos1] = [filaPos2][columnaPos2];
-  grilla[filaPos2][columnaPos2] = posicionAuxiliar;
+  [filaPos1][columnaPos1] = [filaPos2][columnaPos2];
+  [filaPos2][columnaPos2] = posicionAuxiliar;
     //COMPLETADO
 }
 
