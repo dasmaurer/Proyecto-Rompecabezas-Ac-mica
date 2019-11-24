@@ -94,9 +94,9 @@ Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
   var posicionAuxiliar = [filaPos1, columnaPos1];
-  grilla[filaPos1][ColumnaPos1] = [filaPos2][columnaPos2];
+  grilla[filaPos1][ColumnaPos1] = grilla[filaPos2][columnaPos2];
   grilla[filaPos2][columnaPos2] = posicionAuxiliar;
-    //COMPLETAR
+    //COMPLETADO
 }
 
 // Actualiza la posición de la pieza vacía
@@ -107,12 +107,25 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
 }
 
 
-// Para chequear si la posicón está dentro de la grilla.
+
+/* PARTE 3  Paso 4: Definir Movimientos Válidos ////////////////////////////////////////////////////////
+En este paso, hay que terminar la función posicionValida(fila,columna). Esta deberá avisar si la pieza 
+puede moverse para donde queremos que se mueva (entra en el tablero de juego) o no puede (se sale del tablero).
+A nivel lógico, tendrá que definir si la fila y la columna están dentro de la grilla (devolviendo true) 
+o fuera de sus límites (false).
+¿Qué condición deberían cumplir las posiciones para ser válidas?
+Pista: ¿Se podrá resolver todo en un condicional?
+Para chequear si la posicón está dentro de la grilla. */
+
 function posicionValida(fila, columna) {
-
-
-    //COMPLETAR
+  if (fila>=0 && fila<=2 && columna>=0 && columna<=2){
+    return true;
+  } else {
+    return false;
+  }
 }
+//COMPLETADO
+
 
 /* Movimiento de fichas, en este caso la que se mueve es la blanca intercambiando su posición con otro elemento.
 Las direcciones están dadas por números que representa: arriba (38), abajo (40), izquierda (37), derecha (39) */
