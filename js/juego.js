@@ -61,15 +61,16 @@ Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
 
 function chequearSiGano(){
-  var gano = true;
-  for (var i= 0; grilla.length; i++){
+  var gano = false;
+  for (var i=0; grilla.length; i++){
     for (var j=0; grilla[i].length; j++){
-      if (grilla[i][j] != grillaGanadora[i][j]){
-        gano = false;
+      if (grilla[i][j] == grillaGanadora[i][j]){
+        gano = true;
+        mostrarCartelGanador();
       } else { //if (grilla[i][j] == grillaGandora[i][j])
-      return gano;
+      return gano = false;
       } 
-      mostrarCartelGanador();  // <--------- no estoy del todo seguro si tiene que estar acá
+        // <--------- no estoy del todo seguro si tiene que estar acá
     } 
   }
 }
@@ -93,9 +94,9 @@ En vez de intercambiar esos valores vamos a terminar teniendo en ambas posicione
 Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
-  var posicionAuxiliar = [filaPos1, columnaPos1];
-  [filaPos1][columnaPos1] = [filaPos2][columnaPos2];
-  [filaPos2][columnaPos2] = posicionAuxiliar;
+  var posicionAuxiliar = grilla[filaPos1, columnaPos1];
+  grilla[filaPos1][columnaPos1] = grilla[filaPos2][columnaPos2];
+  grilla[filaPos2][columnaPos2] = posicionAuxiliar;
     //COMPLETADO
 }
 
