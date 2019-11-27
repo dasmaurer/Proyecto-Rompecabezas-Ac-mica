@@ -45,6 +45,7 @@ function mostrarInstrucciones(instrucciones) {
 /* PARTE 2 Paso 3: Mostrar último movimiento   //////////////////////////////////////////////////////////
 COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
 y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
+
 //function agregarUltimaDireccion(direccion){
 //  movimientos.push(direccion);
 //  actualizarUltimoMovimiento(movimientos[0]);
@@ -52,8 +53,7 @@ y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
 
 function compilarDirecciones(direccion){
   movimientos.push(direccion);
-  actualizarUltimoMovimiento(movimientos);
-
+  actualizarUltimoMovimiento(movimientos[(movimientos.length-1)]);
 }
 
 /* PARTE 3 Paso 1: Definir el Tablero Ganador  //////////////////////////////////////////////////////////
@@ -167,15 +167,14 @@ function moverEnDireccion(direccion) {
   else if (direccion === codigosDireccion.DERECHA) {
     nuevaFilaPiezaVacia = filaVacia;
     nuevaColumnaPiezaVacia = columnaVacia + 1;
-    //COMPLETAR
   }
     
   // Mueve pieza hacia la izquierda, reemplazandola con la blanca
   else if (direccion === codigosDireccion.IZQUIERDA) {
     nuevaFilaPiezaVacia = filaVacia;
-    nuevaColumnaPiezaVacia = columnaVacia - 1;
-    // COMPLETADO
+    nuevaColumnaPiezaVacia = columnaVacia -1;
   }
+    // COMPLETADO
 
   /* A continuación se chequea si la nueva posición es válida, si lo es, se intercambia. 
   Para que esta parte del código funcione correctamente deberás haber implementado 
