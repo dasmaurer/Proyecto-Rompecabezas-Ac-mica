@@ -65,14 +65,17 @@ function chequearSiGano(){
   for (var i=0; i < grilla.length; i++){
     for (var j=0; j < grilla[i].length; j++){
       if (grilla[i][j] == grillaGanadora[i][j]){
+
         gano = true;
-      } 
-      else { 
-      return gano = false;
+        
+      } else { 
+      return false;
       } 
     } 
   }
+  if (gano) {
   mostrarCartelGanador();
+  }
 }
 
 /*
