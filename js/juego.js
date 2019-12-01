@@ -46,7 +46,7 @@ function mostrarInstrucciones(instrucciones) {
 COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
 y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
 
-function agregarUltimaDireccion(ultimaDireccion) {
+function compilarDirecciones(ultimaDireccion) {
   movimientos.push(ultimaDireccion);
   actualizarUltimoMovimiento(ultimaDireccion);
 }
@@ -197,10 +197,9 @@ function moverEnDireccion(direccion) {
     intercambiarPosiciones(filaVacia, columnaVacia, nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
     actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
 
-    //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
-
-    agregarUltimaDireccion(direccion);
-    }
+//COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
+compilarDirecciones(direccion);
+}
 }
 
 //////////////////////////////////////////////////////////
