@@ -60,7 +60,7 @@ Existen diferentes formas de hacer este chequeo a partir de la grilla. */
 
 
 /////////      __1)__     OPCIÓN CHEQUEAR SI GANO CON PROPUESTA OPTIMISTA (var gano = true)   ////////
-
+/*
 function chequearSiGano(){
   var gano = true;
   for (var i=0; i < grilla.length; i++){
@@ -84,7 +84,7 @@ function chequearSiGano(){
 function mostrarCartelGanador() {
   alert("Ganaste!");
 }
-
+*/
 /////////     __2)__      OPCIÓN CHEQUEAR SI GANO CON PROPUESTA NEGATIVA (var gano = false)     ///////
 
 function chequearSiGano(){
