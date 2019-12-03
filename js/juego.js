@@ -27,6 +27,7 @@ const grillaGanadora = [
 
 /* Estas dos variables son para guardar la posición de la pieza vacía. 
 Esta posición comienza siendo la [2, 2]*/
+
 var filaVacia = 2;
 var columnaVacia = 2;
 
@@ -51,19 +52,14 @@ function compilarDirecciones(ultimaDireccion) {
   actualizarUltimoMovimiento(ultimaDireccion);
 }
 
-/*
-function compilarDirecciones(direccion){
-  movimientos.push(direccion);
-  actualizarUltimoMovimiento(direccion);
-}
-*/
-/*
-  actualizarUltimoMovimiento(movimientos[(movimientos.length-1)]);
-}
-*/
 /* PARTE 3 Paso 1: Definir el Tablero Ganador  //////////////////////////////////////////////////////////
 Esta función va a chequear si el Rompecabezas esta en la posicion ganadora. 
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
+
+// DOS OPCIONES: POSTIVA Y NEGATIVA
+
+
+/////////      __1)__     OPCIÓN CHEQUEAR SI GANO CON PROPUESTA OPTIMISTA (var gano = true)   ////////
 
 function chequearSiGano(){
   var gano = true;
@@ -83,26 +79,34 @@ function chequearSiGano(){
   }
 }
 
-/*
+//COMPLETAR // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
+
+function mostrarCartelGanador() {
+  alert("Ganaste!");
+}
+
+/////////     __2)__      OPCIÓN CHEQUEAR SI GANO CON PROPUESTA NEGATIVA (var gano = false)     ///////
+
 function chequearSiGano(){
   var gano = false;
   for (var i=0; i < grilla.length; i++){
     for (var j=0; j < grilla[i].length; j++){
       if (grilla[i][j] == grillaGanadora[i][j]){
         gano = true;
-      } 
-      else { 
-      return gano;
+      } else { 
+      return false;
       } 
     } 
   }
-  mostrarCartelGanador();
-*/
-//COMPLETAR // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
-
+  if (gano) {
+    mostrarCartelGanador();
+  }
+}
 function mostrarCartelGanador() {
   alert("Ganaste!");
 }
+
+
 
 /* PARTE 3 Paso 3: Intercambiar las piezas  /////////////////////////////////////////////////////////////
 Función que intercambia dos posiciones en la grilla.
@@ -130,10 +134,7 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
   filaVacia = nuevaFila;
   columnaVacia = nuevaColumna;
   return filaVacia, columnaVacia;
-    //COMPLETAR
 }
-
-
 
 /* PARTE 3  Paso 4: Definir Movimientos Válidos ////////////////////////////////////////////////////////////////////////////////////////////
 En este paso, hay que terminar la función posicionValida(fila,columna). Esta deberá avisar si la pieza 
@@ -197,10 +198,10 @@ function moverEnDireccion(direccion) {
     intercambiarPosiciones(filaVacia, columnaVacia, nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
     actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
 
-//COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
-compilarDirecciones(direccion);
-}
-}
+    //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
+    compilarDirecciones(direccion);
+    }
+  }
 
 //////////////////////////////////////////////////////////
 ////////A CONTINUACIÓN FUNCIONES YA IMPLEMENTADAS.////////
