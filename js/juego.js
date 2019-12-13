@@ -87,21 +87,21 @@ function mostrarCartelGanador() {
 */
 /////////     __2)__      OPCIÓN CHEQUEAR SI GANO CON PROPUESTA NEGATIVA (var gano = false)     ///////
 
-function chequearSiGano(){
+function chequearSiGano() {
   var gano = false;
   for (var i=0; i < grilla.length; i++){
     for (var j=0; j < grilla[i].length; j++){
       if (grilla[i][j] == grillaGanadora[i][j]){
         gano = true;
-      } else { 
+      } else {
       return false;
-      } 
-    } 
-  }
-  if (gano) {
-    mostrarCartelGanador();
-  }
+      }
+    }
+  } 
+  return gano;
 }
+
+
 function mostrarCartelGanador() {
   alert("Ganaste!");
 }
